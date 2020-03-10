@@ -28,8 +28,7 @@ markComplete=(id)=>{
 
 //delete Todo
 delTodo=(id)=>{
-  axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`).then(res=>this.setState({todos: [...this.state.todos.filter(todo =>todo.id!==id)]}));
-  //this.setState({todos: [...this.state.todos.filter(todo =>todo.id!==id)]});
+  this.setState({todos: [...this.state.todos.filter(todo =>todo.id!==id)]});
 }
 
 //add Todo
@@ -42,7 +41,7 @@ addTodo=(title)=>{
   axios.post('https://jsonplaceholder.typicode.com/todos',{
     title,
     completed:false
-  }).then(res=>this.setState({todos:[...this.state.todos, res.data]}));
+  }).then(res=>console.log(res.data));
   //this.setState({todos:[...this.state.todos, res.data]})
 }
 
