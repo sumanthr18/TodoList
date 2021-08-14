@@ -14,7 +14,8 @@ state={
 }
 
 componentDidMount(){
-  axios.get('https://jsonplaceholder.typicode.com/todos?_limit=10').then(res=>this.setState({todos:res.data}))
+  axios.get('https://jsonplaceholder.typicode.com/todos?_limit=10').
+  then(res=>this.setState({todos:res.data}))
 }
 
 markComplete=(id)=>{
